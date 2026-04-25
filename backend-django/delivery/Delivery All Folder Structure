@@ -1,0 +1,31 @@
+delivery/
+├── __init__.py
+├── apps.py
+├── admin.py                     # import hub
+├── tests.py
+│
+├── migrations/
+│   └── __init__.py
+│
+├── admins/
+│   ├── __init__.py
+│   └── delivery_admin.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── zone_models.py
+│   └── upload_models.py
+│
+├── serializers/
+│   ├── __init__.py
+│   └── zone_serializers.py
+│
+├── views/                      # THIN HTTP layer only
+│   ├── __init__.py
+│   └── zone_views.py
+│
+├── selectors/                  # DB read logic (GET queries)
+│   ├── __init__.py
+│   └── zone_selectors.py
+│
+├── services/                   # future business logic

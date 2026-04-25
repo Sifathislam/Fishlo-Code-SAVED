@@ -1,0 +1,471 @@
+/**  Hero Section  **/
+.sp-hero {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    background-color: $body-bg;
+    position: relative;
+
+    .sp-icon-set {
+        opacity: 0.15;
+        z-index: 0;
+
+        .icon-1,
+        .icon-2,
+        .icon-3,
+        .icon-4,
+        .icon-5,
+        .icon-6,
+        .icon-7,
+        .icon-8,
+        .icon-9,
+        .icon-10,
+        .icon-11,
+        .icon-12,
+        .icon-13 {
+            position: absolute;
+        }
+
+        .icon-1 {
+            top: 1%;
+            left: 8%;
+        }
+
+        .icon-2 {
+            top: 15%;
+            left: 4%;
+        }
+
+        .icon-3 {
+            max-width: 80px;
+            top: 30%;
+            left: 1%;
+        }
+
+        .icon-4 {
+            top: 3%;
+            right: 4%;
+        }
+
+        .icon-5 {
+            bottom: 1%;
+            left: 50%;
+        }
+
+        .icon-6 {
+            bottom: 3%;
+            right: 13%;
+        }
+
+        .icon-7 {
+            bottom: 5%;
+            left: 25%;
+        }
+
+        .icon-8 {
+            top: 45%;
+            right: 35%;
+        }
+
+        .icon-9 {
+            top: 0%;
+            left: 40%;
+        }
+
+        .icon-10 {
+            top: 45%;
+            right: 20%;
+        }
+
+        .icon-11 {
+            top: 40%;
+            right: 40%;
+        }
+
+        .icon-12 {
+            bottom: -20%;
+            left: 0%;
+        }
+
+        .icon-13 {
+            bottom: -10%;
+            right: 0%;
+        }
+    }
+
+    .sp-hero-details {
+        z-index: 2;
+        position: relative;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+        color: $primary;
+        font-size: 60px;
+        font-weight: 700;
+
+        span {
+            font-weight: 400;
+            color: $title-color;
+        }
+    }
+
+    p {
+        margin-bottom: 15px;
+        color: $text-color;
+    }
+
+    .sp-btns {
+        margin: -5px;
+        display: flex;
+
+        a {
+            margin: 5px;
+            display: flex;
+        }
+    }
+
+    .sp-info {
+        margin-bottom: 50px;
+
+        ul {
+            margin-left: 15px;
+            display: flex;
+
+            .add-icon {
+                background-color: $primary;
+                font-size: 25px;
+
+                a {
+                    width: 49px;
+                    height: 49px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $text-fff !important;
+                }
+            }
+
+            li {
+                @include ease3;
+                width: 60px;
+                height: 60px;
+                margin-left: -20px;
+                border: 5px solid $body-bg;
+                border-radius: 50%;
+                overflow: hidden;
+                z-index: 4;
+
+                a {}
+
+                &:hover {
+                    z-index: 5;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        h6 {
+            margin: 15px 0 0 0;
+            color: $title-color;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        p {
+            color: $text-color;
+        }
+    }
+
+    .sp-rounded-circle {
+        margin: 15px 0 0 20px;
+        background-color: rgba(75, 89, 102, .9);
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        opacity: .9;
+
+        svg {
+            fill: $title-color;
+            animation: sp-rotate 10s linear infinite;
+
+            text {
+                letter-spacing: 1.1PX;
+                font-size: 11px;
+            }
+        }
+
+        .inner-contact {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            color: $text-fff;
+            font-size: 25px;
+        }
+    }
+}
+
+@-webkit-keyframes sp-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sp-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Hero */
+@media only screen and (max-width: 1399px) {
+    .sp-hero {
+        h1 {
+            font-size: 52px;
+        }
+
+        .sp-icon-set {
+
+            .icon-1,
+            .icon-4,
+            .icon-5,
+            .icon-6,
+            .icon-7,
+            .icon-9,
+            .icon-11,
+            .icon-13 {
+                width: 100px;
+            }
+
+            .icon-4 {
+                width: 120px;
+            }
+
+            .icon-6 {
+                width: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .sp-hero {
+        h1 {
+            font-size: 42px;
+        }
+
+        .sp-info {
+            ul {
+                li {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .add-icon {
+                    a {
+                        width: 41px;
+                        height: 41px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .sp-hero {
+        height: 450px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .sp-icon-set {
+            opacity: .2;
+            z-index: 1;
+
+            .icon-1,
+            .icon-2,
+            .icon-3,
+            .icon-4,
+            .icon-5,
+            .icon-6,
+            .icon-7,
+            .icon-8,
+            .icon-9,
+            .icon-10,
+            .icon-11,
+            .icon-12,
+            .icon-13 {
+                position: absolute;
+            }
+
+            .icon-1 {
+                width: 80px;
+            }
+
+            .icon-4 {
+                width: 100px;
+                right: 5%;
+            }
+
+            .icon-5 {
+                width: 80px;
+            }
+
+            .icon-6 {
+                width: 100px;
+            }
+
+            .icon-7 {
+                width: 80px;
+            }
+
+            .icon-9 {
+                width: 80px;
+            }
+
+            .icon-10 {
+                width: 100px;
+            }
+
+            .icon-11 {
+                width: 100px;
+            }
+
+            .icon-13 {
+                width: 100px;
+            }
+        }
+
+        .sp-info {
+            margin: 0;
+        }
+
+        .sp-rounded-circle {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sp-hero {
+        height: 500px;
+
+        .sp-icon-set {
+            .icon-10 {
+                width: 100px;
+                top: 55%;
+                right: 13%;
+            }
+        }
+
+        .sp-info {
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .sp-hero {
+        h1 {
+            font-size: 30px;
+        }
+
+        .sp-icon-set {
+            .icon-10 {
+                right: 0;
+            }
+
+            .icon-5 {
+                bottom: 15%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .sp-hero {
+        h1 {
+            font-size: 27px;
+        }
+
+        .sp-icon-set {
+            .icon-4 {
+                top: 10%;
+            }
+
+            .icon-10 {
+                top: 56%;
+            }
+
+            .icon-11 {
+                top: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .sp-hero {
+        h1 {
+            font-size: 24px;
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .sp-hero {
+        .sp-icon-set {
+
+            .icon-9,
+            .icon-8,
+            .icon-5,
+            .icon-6,
+            .icon-2,
+            .icon-3,
+            .icon-12 {
+                display: none;
+            }
+
+            .icon-10,
+            .icon-11 {
+                width: 80px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .sp-hero {
+        h1 {
+            font-size: 22px;
+        }
+    }
+}

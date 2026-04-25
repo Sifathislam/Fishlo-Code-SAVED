@@ -1,0 +1,257 @@
+/* Blog Sidebar CSS */
+
+.sp-blogs-sidebar {
+	.sp-blogs-sidebar-wraper {
+		position: sticky;
+		top: 30px;
+		padding: 30px;
+		border: 1px solid $card-border;
+		border-radius: $radius-15;
+		background-color: $card-bg-light;
+	}
+	.sp-sb-title {
+		border-bottom: 2px solid $card-border;
+		padding-bottom: 15px;
+
+		h3 {
+			width: 100%;
+			margin: 0;
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			font-family: $font-family-text;
+			font-size: 18px;
+			font-weight: 500;
+		}
+	}
+
+	.sp-blog-search {
+		height: 50px;
+		width: 100%;
+		margin-bottom: 30px;
+		padding: 0;
+		box-shadow: none;
+		outline: none;
+		border: 1px solid $card-border;
+		color: $title-color;
+		position: relative;
+		border-radius: $radius-15;
+		overflow: hidden;
+
+		.sp-blog-search-form {
+			display: flex;
+			align-items: center;
+			background-color: $bg-fff;
+		}
+
+		.form-control {
+			display: block;
+			width: 100%;
+			min-height: 48px;
+			height: 48px;
+			padding: 0 20px;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1;
+			color: $text-color;
+			background-color: transparent;
+			border: none;
+			letter-spacing: 0;
+
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+
+			&::placeholder {
+				font-size: 14px;
+				color: $text-color;
+			}
+		}
+
+		.submit {
+			width: 60px;
+			height: 48px;
+			position: relative;
+			justify-content: center;
+			color: $title-color;
+			background-color: transparent;
+			border: 0;
+		}
+	}
+
+	.sp-sidebar-block {
+		ul {
+			li {
+				a {
+					padding-left: 30px;
+				}
+			}
+		}
+
+		.sp-sidebar-block-item {
+			position: relative;
+
+			input {
+				width: 100%;
+				height: calc(100% - 5px);
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				z-index: 999;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+
+				&:checked~.checked::after {
+					display: block;
+				}
+			}
+
+			a {
+				width: 100%;
+				display: block;
+				color: $text-color;
+				font-size: 14px;
+				margin-top: 0;
+				line-height: 20px;
+				font-weight: 400;
+				text-transform: capitalize;
+				cursor: pointer;
+				display: flex;
+				justify-content: space-between;
+
+				span {
+					color: $text-777;
+					font-size: 13px;
+				}
+			}
+
+			.checked {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 18px;
+				width: 18px;
+				background: $bg-fff;
+				border: 1px solid $card-border;
+				-webkit-transition: all 300ms linear;
+				transition: all 300ms linear;
+				transform: translateY(-50%);
+				border-radius: $radius-5;
+				overflow: hidden;
+
+				&:after {
+					left: -1px;
+					top: -1px;
+					width: 18px;
+					height: 18px;
+					border: 1px solid $primary;
+					content: "\eb7b";
+					position: absolute;
+					display: none;
+					background: $primary;
+					font-family: $remixico;
+					font-size: 14px;
+					color: $bg-fff;
+					line-height: 16px;
+					text-align: center;
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
+		.sp-sidebar-block-item {
+			padding: 15px 0;
+			display: flex;
+			flex-direction: row;
+
+			.sp-sidebar-block-img {
+				margin-right: 15px;
+
+				img {
+					width: 80px;
+					border-radius: $radius-15;
+				}
+			}
+
+			.sp-sidebar-block-detial {
+				.sp-blog-title {
+					a {
+						color: $title-color;
+						font-size: 16px;
+						letter-spacing: 0;
+						line-height: 22px;
+						font-weight: 600;
+					}
+				}
+
+				.sp-blog-date {
+					margin-bottom: 5px;
+					font-size: 14px;
+					color: $text-color;
+					line-height: 20px;
+					letter-spacing: 0;
+				}
+
+				a {
+					font-size: 14px;
+					color: $primary;
+				}
+			}
+		}
+	}
+}
+
+/* Responsive Blog Sidebar css */
+@media only screen and (max-width: 1199px) {
+	.sp-blogs-sidebar {
+		.sp-sidebar-block {
+			.sp-sidebar-block-item {
+				flex-direction: column;
+				.sp-sidebar-block-img {
+					margin-right: 0;
+					margin-bottom: 15px;
+					img {
+						    width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 991px) {
+	.sp-blogs-sidebar {
+		.sp-sidebar-block {
+			.sp-sidebar-block-item {
+				flex-direction: row;
+				.sp-sidebar-block-img {
+					margin-right: 15px;
+					margin-bottom: 0;
+					img {
+						width: 80px;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 420px) {
+	.sp-blogs-sidebar {
+		.sp-sidebar-block {
+			.sp-sidebar-block-item {
+				flex-direction: column;
+				.sp-sidebar-block-img {
+					margin-right: 0;
+					margin-bottom: 15px;
+					img {
+						    width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

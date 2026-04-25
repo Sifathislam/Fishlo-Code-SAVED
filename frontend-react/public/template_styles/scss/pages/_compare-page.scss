@@ -1,0 +1,81 @@
+/* Compare Page CSS */
+.sp-compare-list {
+	.sp-product-card {
+		.remove-product-compare {
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $title-color;
+			border-radius: 15px;
+			z-index: 5;
+
+			i {
+				color: $text-fff;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.sp-compare-page-msg {
+		height: 100%;
+		margin: 0;
+		padding: 30px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #eff4f7;
+		border-radius: 15px;
+		border: 1px solid #eff0f5;
+
+		p {
+			margin: 0;
+			font-size: 20px;
+			color: $title-color;
+		}
+	}
+
+	.sp-product-card {
+		.sp-compare-item {
+			margin-top: 0;
+			padding: 0;
+			display: flex;
+			border-radius: $radius-15;
+
+			ul {
+				li {
+					padding: 10px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					color: $text-999;
+					font-size: 14px;
+					text-transform: capitalize;
+					&:nth-child(odd) {
+
+			background-color: $body-bg;
+					}
+					b {
+						margin-bottom: 5px;
+						color: $title-color;
+						font-size: 15px;
+						font-weight: 600;
+					}
+					.not-stock {
+						color: $red;
+					}
+					
+					.stock {
+						color: $green;
+					}
+				}
+			}
+		}
+	}
+}

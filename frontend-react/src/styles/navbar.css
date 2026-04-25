@@ -1,0 +1,407 @@
+.navbar-theme {
+  --fishlo-red: #e4645a;
+  --fishlo-red-hover: #c0483e;
+  --fishlo-gray: #393f4a;
+  --fishlo-light-gray: #f2f4f7;
+  --fishlo-border: #eaecf0;
+  --fishlo-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.navbar-theme {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  /* background-color: #f9fafb; */
+  background-color: #fff;
+  color: var(--fishlo-gray);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0;
+}
+
+/* --- Custom Container (1600px) --- */
+.container-custom {
+  width: 100%;
+  max-width: 1600px !important;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pac-container {
+  z-index: 1060 !important;
+}
+/* --- 1. Top Utility Bar --- */
+.top-bar {
+  background-color: var(--fishlo-gray);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 8px 0;
+  font-weight: 400;
+}
+.top-bar a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.top-bar a:hover {
+  color: #fff;
+}
+.top-divider {
+  margin: 0 15px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- 2. Main Navbar --- */
+.navbar-main {
+  background-color: #fff;
+  padding: 6px 0;
+  box-shadow: var(--fishlo-shadow);
+  border-bottom: 1px solid var(--fishlo-border);
+}
+
+/* --- Brand Logo --- */
+.brand-img {
+  width: auto;
+  max-width: 120px;
+  height: auto;
+  margin-right: 24px;
+  object-fit: contain;
+}
+
+/* Ensure left (logo + location), centre (search) and right actions keep predictable order */
+.navbar-main .container-custom {
+  align-items: center; /* center vertically */
+}
+
+/* --- Location Box Styles --- */
+
+.location-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--fishlo-light-gray);
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: left;
+}
+.location-btn:hover {
+  background: var(--fishlo-light-gray);
+}
+.location-icon-box {
+  width: 32px;
+  height: 32px;
+  background: rgba(215, 87, 76, 0.1);
+  color: var(--fishlo-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.loc-label {
+  display: block;
+  font-size: 0.7rem;
+  color: #888;
+}
+.loc-value {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--fishlo-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}
+
+.location-btn-empty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px dashed #ccc;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: left;
+}
+.location-btn-empty:hover {
+  border-color: var(--fishlo-red);
+  background: rgba(215, 87, 76, 0.05);
+}
+.location-btn-empty:hover .loc-value-empty {
+  color: var(--fishlo-red);
+}
+.loc-icon-empty {
+  color: #999;
+  font-size: 1.2rem;
+}
+.loc-label-empty {
+  display: block;
+  font-size: 0.7rem;
+  color: #666;
+  font-weight: 400;
+}
+.loc-value-empty {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fishlo-gray);
+  transition: color 0.2s;
+}
+
+/* --- Strong Search Bar --- */
+.search-container {
+  flex-grow: 1;
+  max-width: 600px;
+  position: relative;
+  margin: 0 40px;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  background: var(--fishlo-light-gray);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  padding: 2px;
+}
+.search-form:focus-within {
+  background: #fff;
+  border-color: var(--fishlo-red);
+  box-shadow: 0 0 0 4px rgba(215, 87, 76, 0.1);
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  color: var(--fishlo-gray);
+  outline: none;
+  font-weight: 400;
+}
+.search-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+/* Updated Search Button (Transparent) */
+.search-btn {
+  background-color: transparent;
+  color: var(--fishlo-red);
+  border: none;
+  padding: 0 20px;
+  height: 48px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-btn:hover {
+  transform: scale(1.1);
+  color: var(--fishlo-red-hover);
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--fishlo-gray);
+  margin-bottom: 5px;
+  transition: background 0.1s;
+}
+.result-item:hover {
+  background-color: #f8f9fa;
+}
+.result-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #eee;
+  object-fit: cover;
+}
+
+/* --- Action Icons (Right Side) --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Reduced from 20px */
+}
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  text-decoration: none;
+  color: var(--fishlo-gray);
+  transition: all 0.2s;
+}
+.action-item:hover .icon-box {
+  color: var(--fishlo-red);
+  background: rgba(215, 87, 76, 0.08);
+}
+.icon-box {
+  font-size: 1.4rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s;
+}
+.badge-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--fishlo-red);
+  color: #fff;
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
+.action-label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.lbl-main {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--fishlo-gray);
+}
+@media (max-width: 374px) {
+  .loc-value {
+    max-width: 150px;
+  }
+}
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+  .location-nav {
+    padding-left: 0;
+  }
+  .navbar-main {
+    padding: 5px 0 !important;
+  }
+  .navbar-main {
+    padding: 15px 0;
+  }
+  .account-hide {
+    display: none;
+  }
+
+  .action-label {
+    display: none;
+  }
+  .location-btn {
+    padding: 3px 6px;
+  }
+
+  .location-icon-box {
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .loc-value {
+    font-size: 0.7rem;
+    font-weight: 600;
+    max-width: 170px; /* Force it to truncate earlier on mobile */
+  }
+  
+  .nav-actions {
+    gap: 8px; /* Tighten icons further on mobile */
+  }
+  
+  .icon-box {
+    width: 36px; /* Smaller circles on mobile */
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .location-btn-empty {
+    padding: 4px 10px;
+  }
+
+  .loc-label-empty {
+    font-size: 0.7rem;
+  }
+  .loc-value-empty {
+    font-size: 0.8rem;
+  }
+  .mobile-search-form {
+    display: flex;
+    align-items: center;
+    background: #f0f2f5;
+    border-radius: 12px;
+    padding: 0 12px; /* Add padding to the container */
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-search-form .search-input {
+    padding: 10px 8px !important; /* Reduce left padding since icon is now there */
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .mobile-search-form .search-btn {
+    height: 42px;
+  }
+
+  .mobile-search-form .search-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .mobile-search-form:focus-within {
+    background: #fff;
+    border-color: var(--fishlo-red);
+    box-shadow: 0 0 0 4px rgba(215, 87, 76, 0.1);
+  }
+
+  .mobile-search-icon {
+    display: flex;
+    align-items: center;
+    color: #999; /* Muted color by default */
+    padding-right: 0;
+  }
+
+  /* Change icon color when user focuses the input */
+  .mobile-search-form:focus-within .mobile-search-icon {
+    color: var(--fishlo-red);
+  }
+}
+
+.navbar-main {
+  position: relative;
+}
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+.dropdown-item:active {
+  background-color: #f8f9fa;
+  color: #212529;
+}

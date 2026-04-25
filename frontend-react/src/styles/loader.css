@@ -1,0 +1,75 @@
+
+
+.fishlo-loader-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999; /* High z-index to sit on top of everything */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+/* --- Animation Container --- */
+.infinity-container {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  animation: spin-infinity 2s linear infinite;
+}
+
+.infinity-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* --- The Red Dot --- */
+.dot-1 {
+  background-color: #E4645A;
+  animation: orbit-1 1.5s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(215, 87, 76, 0.4);
+}
+
+/* --- The Gray Dot --- */
+.dot-2 {
+  background-color: #393f4a;
+  animation: orbit-2 1.5s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+
+/* --- Keyframes --- */
+@keyframes spin-infinity {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-1 {
+  0%,
+  100% {
+    transform: translate(-22px, 0);
+  }
+  50% {
+    transform: translate(22px, 0);
+  }
+}
+
+@keyframes orbit-2 {
+  0%,
+  100% {
+    transform: translate(22px, 0) scale(0.8);
+  }
+  50% {
+    transform: translate(-22px, 0) scale(1.2);
+  }
+}
+

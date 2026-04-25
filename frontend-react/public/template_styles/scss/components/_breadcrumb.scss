@@ -1,0 +1,72 @@
+/**  Breadcrumb  **/
+.sp-breadcrumb {
+    background-color: $card-bg;
+    border-bottom: 1px solid $card-border;
+    .sp-breadcrumb-inner {
+        padding: 15px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+    .sp-breadcrumb-title {
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 15px;
+        line-height: 21px;
+        font-weight: 700;
+        color: $title-color;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        z-index: 5;
+    }
+    .sp-breadcrumb-list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        z-index: 5;
+        li {
+            color: $text-color;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 400;
+            a {
+                color: $primary;
+                font-weight: 400;
+            }
+            i {
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+/* Responsive breadcrumb css */
+@media only screen and (max-width: 991px) {
+    .sp-breadcrumb {
+        background-color: $card-bg-light;
+        border-bottom: 1px solid $border-color;
+        .sp-breadcrumb-inner {
+            padding-bottom: 15px;
+            h2 {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 575px) {
+    .sp-breadcrumb {
+        .sp-breadcrumb-inner {
+            flex-direction: column;
+            h2 {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

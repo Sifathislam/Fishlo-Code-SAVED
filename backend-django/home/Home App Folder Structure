@@ -1,0 +1,36 @@
+home/
+├── __init__.py
+├── apps.py
+├── admin.py                     # import hub
+├── views.py                     # import hub
+│
+├── migrations/
+│   └── __init__.py
+│
+├── admins/
+│   ├── __init__.py
+│   └── home_admin.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── banner_models.py
+│   ├── offer_models.py
+│   └── subscriber_models.py
+│
+├── serializers/
+│   ├── __init__.py
+│   ├── banner_serializers.py
+│   └── subscriber_serializers.py
+│
+├── views/                      # thin HTTP layer
+│   ├── __init__.py
+│   └── home_views.py
+│
+├── selectors/                  # GET / read-only queries
+│   ├── __init__.py
+│   └── home_selectors.py
+│
+├── services/                   # POST / write / business logic
+│   ├── __init__.py
+│   └── subscriber_service.py
+

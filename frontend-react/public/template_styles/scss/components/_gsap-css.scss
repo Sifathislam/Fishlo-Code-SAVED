@@ -1,0 +1,173 @@
+/**  GSAP CSS  **/
+.sp-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  transition: opacity 0.3s;
+
+  &:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: $primary;
+    transform: scale(0);
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, opacity 0.1s;
+    opacity: .7;
+  }
+
+  &:after {
+    content: "";
+    width: 34px;
+    height: 34px;
+    border: 1px solid $fff;
+    position: absolute;
+    top: -17px;
+    left: -17px;
+    transform: scale(0);
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, opacity 0.1s;
+  }
+}
+
+.sp-cursor-text {
+  padding: 5px 10px;
+  position: absolute;
+  top: -30px;
+  left: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.1);
+  opacity: 0;
+  color: $fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: $radius-15;
+  backdrop-filter: blur(5px);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: .03rem;
+}
+
+.sp-cursor-img {
+  @include ease3;
+  width: 0;
+  padding: 15px;
+  position: absolute;
+  top: -30px;
+  left: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.1);
+  opacity: 0;
+  color: $fff;
+  background-color: $black-glass;
+  border-radius: $radius-15;
+  backdrop-filter: blur(5px);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: .03rem;
+
+  img {
+    width: 100%;
+    border-radius: $radius-15;
+  }
+}
+
+.sp-cursor.hover-img {
+  &:before {
+    background: transparent;
+    backdrop-filter: blur(10);
+  }
+
+  &:after {
+    opacity: 0;
+  }
+
+  .sp-cursor-img {
+    width: 150px;
+    opacity: 1;
+  }
+}
+
+/* Show cursor */
+.sp-cursor.cursor-show {
+  &:before {
+    transform: scale(0.4);
+  }
+
+  &:after {
+    transform: scale(0.5);
+  }
+}
+
+/* Hover on text */
+.sp-cursor.text {
+  width: 100%;
+
+  &:before {
+    background: transparent;
+    backdrop-filter: blur(10);
+  }
+
+  &:after {
+    opacity: 0;
+  }
+
+  .sp-cursor-text {
+    color: $fff;
+    opacity: 1;
+  }
+}
+
+[data-cursor="big"] {
+  cursor: none;
+}
+
+/* Hover on title */
+.sp-cursor.big {
+  mix-blend-mode: exclusion;
+
+  &:before {
+    transform: scale(1.32);
+    opacity: 1;
+    background: $fff;
+  }
+
+  &:after {
+    transform: scale(1.35);
+    border: 2px solid $fff;
+  }
+}
+
+/* Hover on hide */
+.sp-cursor.hide {
+  &:before {
+    transform: scale(0);
+  }
+
+  &:after {
+    transform: scale(0);
+  }
+}
+
+.main-title {
+  opacity: 0;
+}
+
+/*  Responsive css cursor  */
+@media only screen and (max-width: 991px) {
+  .sp-cursor {
+    display: none;
+  }
+}

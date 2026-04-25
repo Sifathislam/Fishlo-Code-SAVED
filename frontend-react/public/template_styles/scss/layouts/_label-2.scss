@@ -1,0 +1,170 @@
+/**  Label line  **/
+.sp-label-2 {
+    display: flex;
+    background-color: transparent;
+    position: relative;
+
+    .sp-label-list {
+        padding: 15px 0 15px 0;
+        background-color: $bg-fff;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+
+        ul {
+            @include ease3;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            animation-name: infiniteScroll;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            li {
+                @include ease3;
+                padding-right: 100px;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("../img/icons/14.svg");
+                    background-size: 100%;
+                    position: absolute;
+                    top: 40%;
+                    right: 41px;
+                    transform: translateY(-50%);
+                    font-size: 21px;
+                    color: $text-fff;
+                    font-weight: 600;
+                    font-family: remixicon !important;
+                    animation-name: infiniterotate;
+                    animation-duration: 10s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+
+                a {
+                    font-size: 25px;
+                    color: $title-color;
+                    will-change: transform;
+                    font-family: $font-family-title;
+                    transform: translateX(0);
+                    white-space: nowrap;
+                    display: flex;
+                    align-items: center;
+                    text-transform: capitalize;
+
+                    span {
+                        @include ease3;
+                        font-weight: 600;
+                        display: flex;
+                        color: $title-color;
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0%)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+@keyframes infiniteScroll-2 {
+    from {
+        transform: translateX(-50%)
+    }
+
+    to {
+        transform: translateX(0%)
+    }
+}
+
+@keyframes infiniterotate {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+/* Responsive Label */
+@media only screen and (max-width: 1399px) {
+    .sp-label-2 {
+        .sp-label-list {
+            ul {
+                li {
+                    a {
+                        font-size: 30px;
+                    }
+
+                    &:after {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sp-label-2 {
+        .sp-label-list {
+            ul {
+                li {
+                    a {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .sp-label-2 {
+        .sp-label-list {
+            ul {
+                li {
+                    padding-right: 70px;
+
+                    &:after {
+                        top: 35%;
+                        right: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .sp-label-2 {
+        .sp-label-list {
+            ul {
+                li {
+                    a {
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+    }
+}

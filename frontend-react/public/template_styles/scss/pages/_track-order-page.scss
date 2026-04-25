@@ -1,0 +1,122 @@
+/* Track order Page CSS */
+
+.sp-track-order {
+    .sp-track-list {
+        margin: -12px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+            justify-content: center;
+        .sp-track-block.done {
+            background-color: $body-bg;
+
+            &:after {
+                content: "\eb7b";
+                width: 30px;
+                height: 30px;
+                font-family: $remixico;
+                background-color: $backdrop;
+                color: $text-fff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+
+            h6 {
+                color: $title-color;
+            }
+
+            .sp-step-icon {
+                i {
+                    color: $title-color;
+                }
+            }
+        }
+
+        .sp-track-block.active {
+            background: linear-gradient(90deg, $body-bg 50%, transparent 0%);
+            background-size: 200% 100%;
+            animation: slideGradient 2s ease infinite;
+
+            .sp-step-icon {
+                i {
+                    color: $primary;
+                }
+            }
+        }
+
+        @keyframes slideGradient {
+            0% {
+                background-position: 100% 0;
+            }
+
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+        .sp-track-block {
+            width: calc(20% - 24px);
+            padding: 30px;
+            margin: 12px;
+            border: 1px solid $border-color;
+            border-radius: $radius-15;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            h6 {
+                margin: 0;
+                color: $text-color;
+                text-align: center;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            .sp-step-icon {
+                margin-bottom: 10px;
+
+                i {
+                    font-size: 30px;
+                    line-height: 30px;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+/* Track order Responsive css */
+@media only screen and (max-width: 1199px) {
+    .sp-track-order {
+        .sp-track-list {
+            .sp-track-block {
+                width: calc(33.3333% - 24px);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .sp-track-order {
+        .sp-track-list {
+            .sp-track-block {
+                width: calc(50% - 24px);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 420px) {
+    .sp-track-order {
+        .sp-track-list {
+            .sp-track-block {
+                width: 100%;
+            }
+        }
+    }
+}

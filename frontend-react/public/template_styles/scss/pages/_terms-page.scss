@@ -1,0 +1,34 @@
+/* Terms Condition & Privacy Policy Page CSS */
+.sp-terms-conditions, .sp-privacy-policy {
+	.sp-common-wrapper {
+		padding: 30px;
+		border: 1px solid $border-color;
+		max-width: 1140px;
+		margin: 0 auto;
+		background-color: $bg-fff;
+		border-radius: $radius-15;
+	}
+	.sp-csp-block {
+		h5 {
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: 600;  
+			color: $title-color;  
+		}
+		p {
+			margin-bottom: 30px;
+			color: $text-777;
+			font-size: 14px;
+			font-weight: 400;
+			b {
+				font-weight: 500;
+				color: $title-color;
+			}
+		}
+		&:last-child {
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

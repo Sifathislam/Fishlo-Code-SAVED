@@ -1,0 +1,141 @@
+/**  Team section  **/
+.sp-team-section {
+	.owl-dots {
+		margin: -3px;
+		position: absolute;
+		top: -57px;
+		right: 0;
+		button {
+			@include ease3;
+			width: 12px;
+			height: 12px;
+			margin: 3px;
+			border: 1px solid $title-color;
+			border-radius: $radius-15;
+		}
+		button.active {
+			width: 25px;			
+			border-color: $secondary;
+			background-color: $secondary;
+		}
+	}
+    .owl-nav {
+		margin: -5px;
+		position: absolute;
+		top: -70px;
+		right: 0;
+
+		button {
+			@include ease3;
+			width: 40px;
+			height: 40px;
+			margin: 5px;
+			border: 1px solid $secondary !important;
+			border-radius: 50%;
+
+			&:hover {
+				background-color: $primary;
+				border: 1px solid $primary !important;
+
+				&:after {
+					color: $text-fff;
+				}
+			}
+
+			&:after {
+				@include ease3;
+				color: $title-color;
+				font-size: 18px;
+				line-height: 26px;
+				font-family: $remixico;
+			}
+
+			span {
+				display: none;
+			}
+		}
+
+		.owl-prev {
+			position: relative;
+
+			&:after {
+				content: "\f5d6";
+			}
+		}
+
+		.owl-next {
+			position: relative;
+
+			&:after {
+				content: "\f5dc";
+			}
+		}
+	}
+	.sp-team-box {
+		position: relative;
+		&:hover {
+			.sp-team-img {
+				.sp-team-socials { 
+					bottom: 15px;
+					opacity: 1;
+				}
+			}
+		}
+		.sp-team-img {
+			position: relative;
+			img {
+				width: 100%;
+				border-radius: $radius-15
+			}
+			.sp-team-socials {
+				@include ease3;
+				margin: auto;
+				position: absolute;
+				top: auto;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				opacity: 0;
+				ul {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					li {
+						a {
+							width: 30px;
+							height: 30px;
+							margin: 2px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							background-color: $title-color;
+							border-radius: $radius-15;
+							i {
+								color: $text-fff;
+								font-size: 15px;
+							}
+							&:hover {
+								background-color: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+		.sp-team-info {
+			text-align: center;
+			h5 {
+				margin-top: 15px;
+				color: $title-color;
+				font-size: 18px;
+				font-weight: 700;
+			}
+			p {
+				margin: 0;
+				color: $text-777;
+				font-size: 13px;
+				line-height: 16px;
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+/** Faq Page CSS **/
+.sp-accordion.style-1 {
+	.sp-accordion-item {
+		border-color: $border-color;
+		overflow: hidden;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		.sp-accordion-header {
+			margin: 0;
+			padding: 12px 35px 12px 15px;
+			background-color: $card-bg-light;
+			color: $title-color;
+			font-size: 16px;
+			line-height: 28px;
+			font-weight: 500;
+			position: relative;
+			font-family: $font-family-text;
+			border: 1px solid $card-border;
+			border-radius: $radius-10;
+			&:after {
+				content: "\ea4e";
+				width: 15px;
+				height: 15px;
+				display: flex;
+				align-items: center;
+				font-family: $remixico;
+				cursor: pointer;
+				font-size: 24px;
+				color: $title-color;
+				font-weight: 400;
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+		}
+	}
+	.sp-accordion-body {
+		padding: 15px 0;
+		font-size: 14px;
+		color: $text-777;
+		display: none;
+		line-height: 24px;
+		code{
+			font-weight: 600;
+			font-size: 14px;
+			color: $primary;
+		}
+	}
+	.sp-accordion-body.show {
+		display: block;
+	}
+}

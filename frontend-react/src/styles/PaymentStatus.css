@@ -1,0 +1,357 @@
+.fishlo-page-wrapper {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.order-failure-status-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+@media (min-width: 992px) {
+  .order-failure-status-container {
+    padding: 60px 15px;
+  }
+}
+
+.order-failure-payment-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #f1f1f1 !important;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04), 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 992px) {
+  .order-failure-payment-card {
+    border-radius: 30px;
+  }
+}
+
+.order-failure-summary-side {
+  padding: 40px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .order-failure-summary-side {
+    padding: 60px 40px;
+  }
+}
+
+.order-failure-icon-box {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.order-failure-main-circle {
+  width: 100%;
+  height: 100%;
+  background: #fff5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e74c3c;
+  font-size: 35px;
+  animation: order-failure-pulse-red 2s infinite;
+}
+
+@keyframes order-failure-pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+.order-failure-id-pill {
+  background: #f1f3f5;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #718096;
+  display: inline-block;
+}
+
+.order-failure-price-tag {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 10px 0;
+}
+
+.order-failure-diagnostic-side {
+  background: #fafafa;
+  padding: 30px 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+@media (min-width: 992px) {
+  .order-failure-diagnostic-side {
+    padding: 60px 40px;
+    border-left: 1px solid #f1f5f9;
+    border-top: none;
+  }
+}
+
+.order-failure-info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  border: 1px solid #edf2f7;
+  margin-bottom: 15px;
+}
+
+.order-failure-btn-retry-main {
+  background: #e74c3c;
+  color: white !important;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  width: 100%;
+  font-size: 15px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.order-failure-btn-retry-main:hover {
+  transform: translateY(-2px);
+}
+
+.order-failure-support-strip {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .order-failure-support-strip {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.order-success-wrapper {
+  min-height: 100vh;
+}
+
+.order-success-main-content {
+  margin-top: 30px;
+  padding: 15px 0 40px 0;
+}
+
+.order-success-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Success Card */
+.order-success-hero-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.order-success-hero-header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.order-success-icon-box {
+  width: 48px;
+  height: 48px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Info Grid - 2 columns on mobile */
+.order-success-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.order-success-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.order-success-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Items Container */
+.order-success-items-container {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Mobile Product List UI */
+.mobile-product-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mobile-product-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-product-item img {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 15px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #1e293b;
+}
+
+.product-qty {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+/* Summary Card */
+.order-success-summary-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.order-success-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.order-success-total-row {
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Support Card */
+.order-success-support-card {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+}
+
+.icon-circle {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 50%;
+  margin-right: 15px;
+  color: #64748b;
+}
+
+/* Buttons */
+.order-success-btn-primary {
+  background: #d7574c;
+  border: none;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  font-weight: 600;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.order-success-text-brand {
+  color: #d7574c !important;
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  .order-success-main-content {
+    padding: 40px 0;
+  }
+
+  .order-success-hero-card {
+    padding: 40px;
+  }
+
+  .order-success-info-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .order-success-summary-card-sticky {
+    position: sticky;
+    top: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .order-success-main-content {
+    margin-top: 0px;
+  }
+}
+
+.order-item-img {
+  width: 90px;
+  height: 60px;
+  /* object-fit ensures the image isn't squashed if the aspect ratio differs */
+  object-fit: fill;
+  border: 1px solid #eee;
+  flex-shrink: 0; /* Prevents the image from shrinking in flex containers */
+}

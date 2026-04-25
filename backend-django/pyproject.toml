@@ -1,0 +1,25 @@
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    env
+  | venv
+  | .venv
+  | migrations
+  | __pycache__
+  | node_modules
+  | staticfiles
+)/
+'''
+
+[tool.isort]
+profile = "black"
+skip = [
+  "env",
+  "venv",
+  ".venv",
+  "migrations",
+  "__pycache__",
+  "node_modules",
+  "staticfiles"
+]

@@ -1,0 +1,167 @@
+/**  Collection section  **/
+.sp-collection-2 {
+    background-color: $body-bg;
+
+     .sp-icon-set {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.1;
+        z-index: 0;
+        background-image: url("../img/shape/shape-1.png");
+        background-size: 500px;
+    }
+
+}
+
+.sp-collection-block {
+    .collection-detail {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .collection-img {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+
+            img {
+                width: calc(100% - 30px);
+                height: 100%;
+                border-radius: $radius-15;
+            }
+        }
+
+        .collection-info {
+            margin-top: -150px;
+            padding: 165px 15px 15px 15px;
+            background-color: $bg-fff;
+            border: 1px dashed $primary;
+            border-radius: $radius-15;
+
+            h5 {
+                margin-bottom: 10px;
+                text-align: center;
+                text-transform: capitalize;
+
+                a {
+                    color: $title-color;
+                    font-size: 18px;
+                    font-weight: 900;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+
+            .sp-pro-rating {
+                display: flex;
+                justify-content: center;
+
+                i {
+                    line-height: 11px;
+                }
+            }
+
+            .collection-footer {
+                width: 100%;
+                margin-top: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .price {
+                    display: flex;
+                    align-items: center;
+                }
+
+                h5 {
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Collection */
+@media only screen and (max-width: 1399px) {
+.sp-collection-2 {        
+        .sp-icon-set {
+            .icon-1, .icon-4, .icon-5, .icon-6, .icon-7, .icon-9, .icon-11, .icon-13 {
+                width: 100px;
+            }
+            .icon-4 {
+                width: 120px;
+            }
+            .icon-6 {
+                width: 150px;
+            }
+        }
+    }
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                margin-top: -120px;
+                padding: 130px 15px 15px 15px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                margin-top: -140px;
+                padding: 155px 15px 15px 15px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                margin-top: -120px;
+                padding: 130px 15px 15px 15px;
+                h5 {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+                .collection-footer {
+                    h5 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 575px) {
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                h5 {
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

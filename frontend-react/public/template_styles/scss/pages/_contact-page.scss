@@ -1,0 +1,154 @@
+/** Start Contact Section **/
+.sp-contact {
+  iframe {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -7px;
+    border: 1px solid $range-slider;
+    border-radius: $radius-15;
+  }
+  form{	
+	padding: 20px;
+		border: 1px solid $card-border;
+		background-color: $card-bg-light;
+        border-radius: $radius-15;
+    .form-group {
+      margin-bottom: 10px;
+      input, textarea {
+        padding: 10px 15px;
+        border-color: $card-border;
+        border-radius: $radius-15;
+        font-size: 15px;
+        color: $text-777;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+        &::placeholder {
+          color: $text-777;
+        }
+      }
+    }
+  }
+  .sp-contact-detail {
+	.sp-box {
+		padding: 24px;
+		border: 1px solid $card-border;
+		background-color: $card-bg-light;
+		position: relative;
+		border-radius: $radius-15;
+		overflow: hidden;
+		.detail {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			text-align: left;
+		}
+		.info {
+			width: calc(100% - 70px);
+			h3 {
+				font-size: 18px;
+				font-weight: 600;
+				color: $title-color;
+				text-transform: capitalize;
+			}
+			p {
+				margin: 0;
+				font-size: 14px;
+    			color: $text-777;
+				line-height: 20px;
+			}
+		}
+		.icon {
+			width: 60px;
+			height: 60px;
+			margin-right: 15px;
+			background-color: $secondary;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border-radius: $radius-15;
+			i {
+				font-size: 25px;
+				color: $bg-fff;
+			}
+		}
+		.icon-bg {
+			position: absolute;
+			top: 0;
+			right: -30px;
+			opacity: .05;
+			i {
+				font-size: 150px;
+				line-height: 150px;
+				color: $primary;
+			}
+		}
+	}
+  }
+}
+
+/* Responsive Contact page CSS */
+@media only screen and (max-width: 991px) {
+	.sp-contact {
+		.sp-contact-detail {
+			.sp-box {
+				.info {
+					h3 {
+						font-size: 19px;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	.sp-contact {
+		iframe {
+			height: 300px;
+		}
+	}
+}
+@media only screen and (max-width: 575px) {
+	.sp-contact {
+		iframe {
+			height: 250px;
+		}
+		.sp-contact-detail {
+			.sp-box {
+				.info {
+					h3 {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 420px) {
+	.sp-contact {
+		.sp-contact-detail {
+			.sp-box {
+				.icon-bg {
+					display: none;
+				}
+				.icon {
+					width: 50px;
+    				height: 50px;
+					margin: 0 0 15px 0;
+					i {
+						font-size: 23px;
+					}
+				}
+				.detail {
+					flex-direction: column;
+				}
+				.info {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

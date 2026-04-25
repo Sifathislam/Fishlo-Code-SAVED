@@ -1,0 +1,123 @@
+/*-----------------------------------------------------------------------------------
+
+Item Name: Sprazo - Multipurpose eCommerce HTML Template.
+Author: Maraviya Infotech
+Version: 1.1.0
+Copyright : 2025
+
+-----------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------
+    Included CSS INDEX
+-----------------------------------------------------------------------------------
+
+01. Typography
+
+02. Utilities
+    - mixing
+    - variables
+
+03. Components
+    - common
+    - header
+    - category-popup
+    - footer
+    - footer-nav
+    - cart-sidebar
+    - recent-popup
+    - quickview
+    - breadcrumb
+    - breadcrumb 2
+    - shop-sidebar
+    - blog-sidebar
+    - gsap-css
+    - tools-sidebar
+
+04. Layouts
+    - hero
+    - banner
+    - label
+    - product
+    - about
+    - service
+    - category
+    - collection
+    - vendor
+    - deal
+    - testimonials
+    - blog
+    - blog 2
+    - subscribe
+    - team
+
+05. Pages
+    - blog-page
+    - shop-page
+    - single-product-page
+    - faq-page
+    - login-page
+    - register-page
+    - term-page
+    - cart-page
+    - checkout-page
+    - contact-us-page
+    - wishlist-page
+    - compare-page
+    - track-order-page
+    
+-----------------------------------------------------------------------------------*/
+
+/* Typography ( Import Typography ) */
+@import "base/_typography";
+
+/* Utilities ( Import Utilities ) */
+@import "utilities/_mixing";
+@import "utilities/_variables";
+
+/* components ( Import components ) */
+@import "components/_common";
+@import "components/_header";
+@import "components/_category-popup";
+@import "components/_footer";
+@import "components/_footer-nav";
+@import "components/_cart-sidebar";
+@import "components/_recent-popup";
+@import "components/_quickview-popup";
+@import "components/_breadcrumb";
+@import "components/_breadcrumb-2";
+@import "components/_shop-sidebar";
+@import "components/_blog-sidebar";
+@import "components/_gsap-css";
+@import "components/_tools-sidebar";
+
+/* Layouts ( Import Layouts ) */
+@import "layouts/_hero";
+@import "layouts/_banner";
+@import "layouts/_label";
+@import "layouts/_product";
+@import "layouts/_about";
+@import "layouts/_service";
+@import "layouts/_category";
+@import "layouts/_collection";
+@import "layouts/_vendor";
+@import "layouts/_deal";
+@import "layouts/_testimonial";
+@import "layouts/_blog";
+@import "layouts/_blog-2";
+@import "layouts/_subscribe";
+@import "layouts/_team";
+
+/* Pages ( Import Pages ) */
+@import "pages/_blog-page";
+@import "pages/_shop-page";
+@import "pages/_single-product-page";
+@import "pages/_faq-page";
+@import "pages/_login-page";
+@import "pages/_register-page";
+@import "pages/_terms-page";
+@import "pages/_cart-page";
+@import "pages/_checkout-page";
+@import "pages/_contact-page";
+@import "pages/_wishlist-page";
+@import "pages/_compare-page";
+@import "pages/_track-order-page";

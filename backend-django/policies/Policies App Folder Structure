@@ -1,0 +1,33 @@
+policies/
+├── __init__.py
+├── apps.py
+├── admin.py                     # import hub
+├── tests.py
+│
+├── migrations/
+│   └── __init__.py
+│
+├── admins/
+│   ├── __init__.py
+│   └── policy_admin.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── policy_models.py
+│   └── faq_models.py
+│
+├── serializers/
+│   ├── __init__.py
+│   ├── policy_serializers.py
+│   └── faq_serializers.py
+│
+├── views/                      # THIN views only (HTTP layer)
+│   ├── __init__.py
+│   └── policy_views.py
+│
+├── selectors/                  # GET queries only
+│   ├── __init__.py
+│   └── policy_selectors.py
+│
+├── services/                   # future POST/PUT/DELETE logic (empty for now)
+

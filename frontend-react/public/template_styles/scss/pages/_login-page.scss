@@ -1,0 +1,261 @@
+/*-------------------------------------------------
+  Login Page CSS
+---------------------------------------------------*/
+.sp-login-content {
+	max-width: 1000px;
+	margin: auto;
+	padding: 30px 15px;
+	background-color: $card-bg-light;
+	border-radius: $radius-15;
+	border: 1px solid $card-border;
+	display: flex;
+	flex-direction: row;
+
+	.sp-login-box {
+		width: 50%;
+		padding: 0 15px;
+	}
+}
+
+.sp-login-wrapper {
+	max-width: 530px;
+	height: 100%;
+	margin: 0 auto 0;
+
+	.sp-login-wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	.sp-login-fp {
+		margin-top: 5px;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.sp-login-container {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		text-align: left;
+
+		.sp-login-form {
+			width: 100%;
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			label {
+				margin-bottom: 10px;
+				color: $title-color;
+				font-size: 14px;
+				font-weight: 500;
+				letter-spacing: 0;
+				line-height: 1;
+			}
+
+			input {
+				height: 50px;
+				margin-bottom: 24px;
+				padding: 0 15px;
+				border: 1px solid $card-border;
+				border-radius: $radius-15;
+				color: $text-color;
+				font-size: 14px;
+				outline: none;
+				font-weight: 400;
+				&::placeholder {
+					font-weight: 300;
+				}
+			}
+
+			.sp-login-wrap {
+				+ {
+					.sp-login-wrap {
+						input {
+							margin-bottom: 15px;
+						}
+					}
+				}
+			}
+
+			.sp-login-fp {
+				label {
+					margin-bottom: 0;
+
+					a {
+						color: $text-777;
+						font-size: 14px;
+						font-weight: 400;
+						letter-spacing: 0px;
+						display: flex;
+						justify-content: flex-end;
+						&:hover {
+							color: $secondary;
+						}
+					}
+				}
+			}
+
+			.sp-login-btn {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.sp-login-btn {
+				margin-top: 30px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+
+				button {
+					padding: 8px 15px;
+					span {
+            			@include ease3;
+						color: $title-color;
+					}
+					&:hover {
+					span {
+						color: $text-fff;
+					}
+				}
+				}
+
+				span {
+					color: $text-777;
+					font-size: 14px;
+
+					a {
+						color: $title-color;
+						font-weight: 600;
+						&:hover {
+							color: $secondary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sp-login-img {
+	img {
+		width: 100%;
+		border-radius: $radius-15;
+	}
+}
+.sp-remember{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: $text-777;
+    font-weight: 300;
+	line-height: 20px;
+	font-size: 14px;
+	user-select: none;
+	input {
+		width: 18px;
+		height: 18px !important;
+		margin: 0 10px 0 0 !important;
+		position: relative !important;
+		opacity: 0;
+		border: 1px solid $border-color !important;
+		cursor: pointer;
+		z-index: 9;
+		&:checked ~ .checked {
+			&:after {
+				display: block;
+			}
+		}
+	 }
+	.checked {
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $bg-fff;
+		border: 1px solid $card-border;
+		border-radius: 5px;
+		-webkit-transition: all 300ms linear;
+		transition: all 300ms linear;
+		&:after {
+			width: 18px;
+			height: 18px;
+			left: -1px;
+			top: 0;
+			border: 1px solid $secondary;
+			content: "\eb7b";
+			position: relative;
+			display: none;
+			font-family: "remixicon";
+			font-size: 15px;
+			color: $secondary;
+			line-height: 16px;
+			text-align: center;
+			border-radius: 5px;
+		}
+	}
+}
+.sp-forgot {
+	.sp-login-wrapper {
+		.sp-login-container {
+			.sp-login-form {
+				input {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Responsive Login CSS */
+@media only screen and (max-width: 991px) {
+	.d-n-991 {
+		display: none;
+	}
+	.sp-login-content {
+		max-width: 530px;
+		margin: 0 auto 0;
+		.sp-login-box {
+			width: 100%;
+		}
+	}
+}
+@media only screen and (max-width: 575px) {
+	.sp-login-content {
+		padding: 15px 0;
+	}
+	.sp-login-wrapper {
+		.sp-login-container {
+			.sp-login-form {
+				.sp-login-btn {
+					flex-direction: column;
+					> span {
+						margin-bottom: 15px;
+					}
+				}
+				.sp-login-fp {
+					label {
+						a {
+							justify-content: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 320px) {
+	.sp-login-wrapper {
+		.sp-login-fp {
+			flex-direction: column;
+			.sp-remember {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

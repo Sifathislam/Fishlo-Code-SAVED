@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow indexing of private or functional routes
+Disallow: /dashboard/
+Disallow: /store/
+Disallow: /checkout/
+Disallow: /order/
+
+Sitemap: https://fishlo.in/sitemap.xml

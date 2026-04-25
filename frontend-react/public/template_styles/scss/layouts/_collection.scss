@@ -1,0 +1,311 @@
+/**  Collection section  **/
+.sp-collection {
+    background-color: $body-bg;
+
+    .sp-icon-set {
+        opacity: .15;
+        z-index: 1;
+
+        .icon-1,
+        .icon-2,
+        .icon-3,
+        .icon-4,
+        .icon-5,
+        .icon-6,
+        .icon-7,
+        .icon-8,
+        .icon-9,
+        .icon-10,
+        .icon-11,
+        .icon-12,
+        .icon-13 {
+            position: absolute;
+        }
+
+        .icon-1 {
+            top: 1%;
+            left: 8%;
+        }
+
+        .icon-2 {
+            top: 15%;
+            left: 4%;
+        }
+
+        .icon-3 {
+            max-width: 80px;
+            top: 30%;
+            left: 1%;
+        }
+
+        .icon-4 {
+            top: 3%;
+            right: 25%;
+        }
+
+        .icon-5 {
+            bottom: 1%;
+            left: 50%;
+        }
+
+        .icon-6 {
+            bottom: 3%;
+            right: 13%;
+        }
+
+        .icon-7 {
+            bottom: 5%;
+            left: 25%;
+        }
+
+        .icon-8 {
+            top: 45%;
+            right: 35%;
+        }
+
+        .icon-9 {
+            top: 0%;
+            left: 40%;
+        }
+
+        .icon-10 {
+            top: 45%;
+            right: 20%;
+        }
+
+        .icon-11 {
+            top: 40%;
+            right: 40%;
+        }
+
+        .icon-12 {
+            bottom: 1%;
+            left: 0%;
+        }
+
+        .icon-13 {
+            top: 20%;
+            right: 0%;
+        }
+    }
+
+}
+
+.sp-collection-block {
+    .collection-detail {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:hover {
+            .collection-img {
+                img {
+                    transform: scale(.98);
+                    box-shadow:none;
+                }
+            }
+        }
+        .collection-img {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+
+            img {
+                @include ease3;
+                width: calc(100% - 30px);
+                height: 100%;
+                border-radius: $radius-15;
+                box-shadow: 0px 12px 10px 0px rgba(0, 0, 0, .12);
+            }
+        }
+
+        .collection-info {
+            margin-top: -150px;
+            padding: 165px 15px 15px 15px;
+            background-color: $bg-fff;
+            border: 1px dashed $primary;
+            border-radius: $radius-15;
+
+            h5 {
+                margin-bottom: 10px;
+                text-align: center;
+                text-transform: capitalize;
+
+                a {
+                    color: $title-color;
+                    font-size: 18px;
+                    font-weight: 900;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+
+            .sp-pro-rating {
+                display: flex;
+                justify-content: center;
+
+                i {
+                    line-height: 11px;
+                }
+            }
+
+            .collection-footer {
+                width: 100%;
+                margin-top: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .price {
+                    display: flex;
+                    align-items: center;
+                }
+
+                h5 {
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Collection */
+@media only screen and (max-width: 1399px) {
+.sp-collection {        
+        .sp-icon-set {
+            .icon-1, .icon-4, .icon-5, .icon-6, .icon-7, .icon-9, .icon-11, .icon-13 {
+                width: 100px;
+            }
+            .icon-4 {
+                width: 120px;
+            }
+            .icon-6 {
+                width: 150px;
+            }
+        }
+    }
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                margin-top: -120px;
+                padding: 130px 15px 15px 15px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                margin-top: -140px;
+                padding: 155px 15px 15px 15px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .sp-collection {
+        .sp-icon-set {
+            .icon-4 {
+                width: 100px;
+                right: 16%;
+            }
+            .icon-5 {
+                width: 100px;
+            }
+            .icon-6 {
+                width: 100px;
+            }
+            .icon-7 {
+                width: 100px;
+            }
+            .icon-9 {
+                width: 100px;
+            }
+            .icon-10 {
+                width: 100px;
+                    top: 55%;
+    right: 13%;
+            }
+            .icon-11 {
+                width: 100px;
+            }
+            .icon-13 {
+                width: 100px;
+            }
+        }
+    }
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                margin-top: -120px;
+                padding: 130px 15px 15px 15px;
+                h5 {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+                .collection-footer {
+                    h5 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 575px) {
+    .sp-collection-block {
+        .collection-detail {
+            .collection-info {
+                h5 {
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .sp-collection {
+        .sp-icon-set {
+            .icon-5 {
+                bottom: 15%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 460px) {
+    .sp-collection {
+        .sp-icon-set {
+            .icon-4 {
+                right: 8%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 420px) {
+    .icon-9, .icon-8, .icon-5, .icon-6, .icon-2, .icon-3, .icon-12 {
+        display: none;  
+    }
+}
+@media only screen and (max-width: 360px) {
+    .sp-collection {
+        .sp-icon-set {
+            .icon-6, .icon-7, .icon-8, .icon-9, .icon-10, .icon-11 {
+                display: none;
+            }
+        }
+    }
+}

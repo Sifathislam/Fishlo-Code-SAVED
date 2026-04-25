@@ -1,0 +1,848 @@
+/* ===== B2B FROZEN SEAFOOD LANDING PAGE — COMPACT PREMIUM THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Brand Colors */
+  --fishlo-red: #e4645a;
+  --fishlo-red-dark: #cc544b;
+  --fishlo-red-light: #ff8a80;
+  --fishlo-gray: #393f4a;
+  --fishlo-text-main: #2d3436;
+  --fishlo-text-sub: #636e72;
+
+  /* B2B Specific Palette */
+  --b2b-bg-light: #ffffff;
+  --b2b-bg-alt: #f8f9fa;
+  --b2b-bg-hero: linear-gradient(135deg, #fef5f4 0%, #fff5f0 50%, #f8f9fa 100%);
+  --b2b-gradient-primary: linear-gradient(135deg, #e4645a 0%, #ff8a80 100%);
+  --b2b-gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+
+  /* Borders & Shadows */
+  --b2b-border: rgba(57, 63, 74, 0.08);
+  --b2b-glass-border: rgba(255, 255, 255, 0.5);
+  --b2b-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --b2b-shadow-md: 0 8px 20px rgba(0, 0, 0, 0.05);
+  --b2b-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.06);
+  --b2b-shadow-glow: 0 0 30px rgba(228, 100, 90, 0.12);
+
+  /* Transitions */
+  --b2b-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.b2b-frozen-page {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--b2b-bg-light);
+  color: var(--fishlo-text-main);
+  overflow-x: hidden;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+.b2b-hero-title {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* --- Reusable Components --- */
+.b2b-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.b2b-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(228, 100, 90, 0.08);
+  border: 1px solid rgba(228, 100, 90, 0.15);
+  color: var(--fishlo-red);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  animation: badgeEnter 0.6s var(--b2b-ease) forwards;
+}
+
+@keyframes badgeEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.b2b-btn-primary {
+  background: var(--b2b-gradient-primary);
+  color: white !important;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s var(--b2b-ease);
+  box-shadow: 0 6px 20px rgba(228, 100, 90, 0.25);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b2b-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.b2b-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(228, 100, 90, 0.35);
+}
+
+.b2b-btn-primary:hover::before {
+  left: 100%;
+}
+
+/* --- Section Headers --- */
+.b2b-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.b2b-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--fishlo-gray);
+  letter-spacing: -0.015em;
+}
+
+.b2b-section-subtitle {
+  font-size: 1rem;
+  color: var(--fishlo-text-sub);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* --- Hero Section --- */
+.b2b-hero {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 60px 0 50px;
+  background: var(--b2b-bg-hero);
+}
+
+.b2b-hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  mask-image: linear-gradient(to left, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 65%, transparent 100%);
+  opacity: 0.8;
+}
+
+.b2b-hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.b2b-hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--fishlo-gray);
+  letter-spacing: -0.025em;
+}
+
+.b2b-hero-title span {
+  color: var(--fishlo-red);
+  background: var(--b2b-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.b2b-hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--fishlo-text-sub);
+  font-weight: 400;
+  margin-bottom: 32px;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.b2b-hero-stats-card {
+  background: var(--b2b-gradient-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--b2b-glass-border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--b2b-shadow-lg);
+  max-width: 380px;
+  margin-left: auto;
+  animation: statsEnter 0.8s var(--b2b-ease) 0.3s forwards;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+@keyframes statsEnter {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.b2b-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.b2b-stat-item:not(:last-child) {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--b2b-border);
+}
+
+.b2b-stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fishlo-red);
+  line-height: 1;
+}
+
+.b2b-stat-label {
+  font-size: 0.85rem;
+  color: var(--fishlo-gray);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* --- Trust Bar --- */
+.b2b-trust-bar {
+  padding: 20px 0;
+  background: #fff;
+  border-bottom: 1px solid var(--b2b-border);
+}
+
+.b2b-trust-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.b2b-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--fishlo-text-sub);
+  font-size: 0.85rem;
+}
+
+.b2b-trust-item i {
+  color: var(--fishlo-red);
+}
+
+/* --- Features Section --- */
+.b2b-features {
+  padding: 60px 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.b2b-feature-card {
+  background: #fff;
+  border: 1px solid var(--b2b-border);
+  border-radius: 20px;
+  padding: 30px 24px;
+  height: 100%;
+  transition: all 0.4s var(--b2b-ease);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.b2b-feature-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--b2b-gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--b2b-ease);
+  transform-origin: left;
+}
+
+.b2b-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--b2b-shadow-md);
+  border-color: rgba(228, 100, 90, 0.2);
+}
+
+.b2b-feature-card:hover::after {
+  transform: scaleX(1);
+}
+
+.b2b-feature-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--b2b-bg-alt);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fishlo-red);
+  margin-bottom: 20px;
+  transition: all 0.4s var(--b2b-ease);
+}
+
+.b2b-feature-card:hover .b2b-feature-icon {
+  background: var(--fishlo-red);
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.b2b-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.b2b-feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--fishlo-text-sub);
+  margin: 0;
+}
+
+/* --- Showcase Section --- */
+.b2b-showcase {
+  padding: 60px 0;
+  background: var(--b2b-bg-alt);
+}
+
+.b2b-product-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--b2b-border);
+  transition: all 0.3s var(--b2b-ease);
+  height: 100%;
+}
+
+.b2b-product-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.b2b-product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s var(--b2b-ease);
+}
+
+.b2b-product-card:hover .b2b-product-overlay {
+  opacity: 1;
+}
+
+.b2b-product-content {
+  padding: 20px;
+}
+
+.b2b-product-type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--fishlo-red);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.b2b-product-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.b2b-product-card p {
+   font-size: 0.85rem;
+   line-height: 1.4;
+}
+
+.b2b-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--b2b-shadow-md);
+}
+
+/* --- QA Section --- */
+.b2b-qa-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.b2b-qa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.b2b-qa-visual {
+  position: relative;
+  padding: 20px;
+}
+
+.b2b-qa-shield {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: var(--b2b-bg-hero);
+  border-radius: 32px;
+  padding: 40px;
+  text-align: center;
+  border: 2px solid var(--fishlo-red-light);
+  position: relative;
+  z-index: 1;
+}
+
+.b2b-qa-shield i {
+  font-size: 60px;
+  color: var(--fishlo-red);
+  margin-bottom: 20px;
+  filter: drop-shadow(0 6px 12px rgba(228, 100, 90, 0.2));
+}
+
+/* --- How it Works --- */
+.b2b-workflow {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.b2b-timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.b2b-timeline::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--b2b-border);
+  z-index: 0;
+}
+
+.b2b-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.b2b-step-number {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border: 3px solid var(--fishlo-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--fishlo-red);
+  margin: 0 auto 20px;
+  box-shadow: var(--b2b-shadow-sm);
+  transition: all 0.3s var(--b2b-ease);
+}
+
+.b2b-step:hover .b2b-step-number {
+  background: var(--fishlo-red);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: var(--b2b-shadow-glow);
+}
+.b2b-step h4 {
+   font-size: 1.1rem;
+   margin-bottom: 8px;
+}
+.b2b-step p {
+   font-size: 0.9rem;
+   margin-bottom: 0;
+}
+
+/* --- FAQ Section --- */
+.b2b-faq {
+  padding: 60px 0;
+  background: var(--b2b-bg-alt);
+}
+
+.b2b-accordion-item {
+  background: #fff;
+  border: 1px solid var(--b2b-border);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s var(--b2b-ease);
+}
+
+.b2b-accordion-item.active {
+  box-shadow: var(--b2b-shadow-md);
+  border-color: var(--fishlo-red-light);
+}
+
+.b2b-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--fishlo-gray);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.b2b-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--b2b-ease);
+  padding: 0 24px;
+}
+
+.b2b-accordion-item.active .b2b-accordion-body {
+  max-height: 500px;
+  padding-bottom: 24px;
+}
+.b2b-accordion-body p {
+   font-size: 0.9rem;
+   margin: 0;
+}
+
+/* --- Contact Form --- */
+.b2b-contact {
+  padding: 60px 0;
+  background: #fff;
+  position: relative;
+}
+
+.b2b-form-wrapper {
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: var(--b2b-shadow-lg);
+  border: 1px solid var(--b2b-border);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.b2b-form-info {
+  background: var(--b2b-gradient-primary);
+  padding: 50px;
+  color: #fff;
+}
+.b2b-form-info h2 {
+   font-size: 1.8rem;
+   margin-bottom: 16px;
+}
+.b2b-form-info p {
+   font-size: 0.9rem;
+}
+
+.b2b-form-main {
+  padding: 50px;
+}
+
+.b2b-form-group {
+  margin-bottom: 16px;
+}
+
+.b2b-form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--fishlo-gray);
+  font-size: 0.85rem;
+}
+
+.b2b-form-control {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 2px solid var(--b2b-bg-alt);
+  background: var(--b2b-bg-alt);
+  transition: all 0.3s var(--b2b-ease);
+  font-size: 0.95rem;
+}
+
+.b2b-form-control:focus {
+  background: #fff;
+  border-color: var(--fishlo-red);
+  box-shadow: 0 0 0 3px rgba(228, 100, 90, 0.1);
+  outline: none;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN: SPECIFICALLY TUNED FOR PERFECT SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .b2b-hero-title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .b2b-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .b2b-hero-bg {
+    width: 100%;
+    height: 50%;
+    opacity: 0.3;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
+  .b2b-hero-title {
+    font-size: 2.4rem;
+  }
+  .b2b-hero-subtitle {
+     font-size: 1rem;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 24px;
+  }
+  .b2b-hero-stats-card {
+    margin: 30px auto 0;
+    padding: 20px;
+    max-width: 320px;
+  }
+  .b2b-stat-item {
+      gap: 12px;
+  }
+  .b2b-stat-number {
+      font-size: 1.6rem;
+  }
+  .b2b-stat-label {
+      font-size: 0.8rem;
+  }
+
+  .b2b-qa-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .b2b-timeline::before {
+    display: none;
+  }
+  
+  .b2b-workflow .col-lg-4 {
+     margin-bottom: 30px;
+  }
+  .b2b-workflow .col-lg-4:last-child {
+      margin-bottom: 0;
+  }
+
+  .b2b-form-wrapper {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .b2b-form-info {
+    display: none;
+  }
+}
+
+/* Tablet & Mobile Layout Polish */
+@media (max-width: 768px) {
+  .b2b-container {
+     padding: 0 16px;
+  }
+  .b2b-section-header {
+      margin-bottom: 24px;
+  }
+  .b2b-section-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  .b2b-section-subtitle {
+      font-size: 0.9rem;
+  }
+  
+  .b2b-hero {
+     padding: 40px 0 30px;
+  }
+  .b2b-hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  .b2b-hero-subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+  }
+  
+  .b2b-trust-item {
+      font-size: 0.75rem;
+      gap: 6px;
+  }
+  
+  .b2b-features, .b2b-showcase, .b2b-workflow, .b2b-faq, .b2b-contact, .b2b-qa-section {
+    padding: 40px 0;
+  }
+
+  .b2b-feature-card {
+     padding: 24px 20px;
+  }
+  .b2b-feature-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 16px;
+  }
+  .b2b-feature-card h3 {
+     font-size: 1.1rem;
+     margin-bottom: 8px;
+  }
+  .b2b-feature-card p {
+     font-size: 0.85rem;
+  }
+  
+  .b2b-product-card h4 {
+      font-size: 1rem;
+  }
+  .b2b-product-content {
+      padding: 16px;
+  }
+  .b2b-product-image {
+      height: 140px;
+  }
+
+  .b2b-form-main {
+    padding: 24px 16px;
+  }
+
+  .b2b-accordion-header {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+  .b2b-accordion-body {
+     padding: 0 16px;
+  }
+  .b2b-accordion-item.active .b2b-accordion-body {
+     padding-bottom: 16px;
+  }
+  .b2b-accordion-body p {
+      font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Phones Polish */
+@media (max-width: 576px) {
+  .b2b-hero-title {
+    font-size: 1.6rem;
+  }
+  .b2b-hero-subtitle {
+      font-size: 0.85rem;
+  }
+  .b2b-btn-primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+  
+  .b2b-stat-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 4px;
+      padding-bottom: 16px;
+  }
+  .b2b-stat-number {
+    font-size: 1.6rem;
+  }
+  .b2b-stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .b2b-trust-grid {
+      gap: 12px;
+      justify-content: flex-start;
+  }
+  .b2b-trust-item {
+      width: 45%;
+  }
+
+  .b2b-step-number {
+      width: 50px;
+      height: 50px;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+  }
+  .b2b-step h4 {
+      font-size: 1rem;
+  }
+
+  .b2b-qa-shield {
+      padding: 24px;
+      border-radius: 20px;
+  }
+  .b2b-qa-shield i {
+      font-size: 40px;
+  }
+  
+  .b2b-form-control {
+      font-size: 0.85rem;
+      padding: 10px 14px;
+  }
+  .b2b-form-label {
+      font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,39 @@
+/* Wishlist Page CSS */
+.sp-wishlist-list {
+	.sp-product-card {
+		.remove-product {
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $title-color;
+			border-radius: 15px;
+			z-index: 5;
+			i {
+				color: $text-fff;
+				font-size: 14px;
+			}
+		}
+	}
+	.sp-wish-page-msg {
+		height: 100%;
+		margin: 0;
+		padding: 30px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #eff4f7;
+		border-radius: 15px;
+		border: 1px solid #eff0f5;
+		p{
+			margin: 0;
+			font-size: 20px;
+			color: $title-color;
+		}
+	}
+}

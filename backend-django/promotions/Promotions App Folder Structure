@@ -1,0 +1,30 @@
+promotions/
+├── __init__.py
+├── apps.py
+├── admin.py
+├── tests.py
+│
+├── migrations/
+│   └── __init__.py
+│
+├── admins/
+│   ├── __init__.py
+│   └── banner_admin.py
+│
+├── models/
+│   ├── __init__.py
+│   └── banner_models.py
+│
+├── serializers/
+│   ├── __init__.py
+│   └── banner_serializers.py
+│
+├── views/
+│   ├── __init__.py
+│   └── banner_views.py
+│
+├── selectors/
+│   ├── __init__.py
+│   └── banner_selectors.py
+│
+├── services/

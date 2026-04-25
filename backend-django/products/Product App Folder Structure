@@ -1,0 +1,56 @@
+products/
+│
+├── __init__.py
+├── apps.py
+├── admin.py                      # (optional bridge) -> from .admin import *
+├── mixins.py
+├── tests.py
+├── utils.py                      # existing (your get_user_storage_location etc.)
+│
+├── migrations/
+│   └── __init__.py
+│
+├── models/
+│   ├── __init__.py               # exports models
+│   ├── category_models.py        # Category, SubCategory
+│   ├── product_models.py         # Product, PriceMatrix, ImageGallery
+│   ├── review_models.py          # Review
+│   ├── content_models.py         # WhatYouGet, Source
+│   └── tracking_models.py        # StockNotifyRequest, RecentlyViewed
+│
+├── serializers/
+│   ├── __init__.py
+│   ├── category_serializers.py   # CategoryMinimal, SubCategoryMinimal, CategoryWithSubCategory, SubCategorySerializer
+│   ├── cut_serializers.py        # CutSerializer
+│   ├── product_serializers.py    # ProductListSerializer, ProductDetailSerializer, ProductSearchSerializer, ImageGallerySerializer
+│   ├── review_serializers.py     # ReviewUserSerializer, ProductReviewSerializer, CreateReviewSerializer
+│   ├── content_serializers.py    # WhatYouGetSerializer, SourceSerializer
+│   └── stock_serializers.py      # StockNotifyRequestSerializer
+│
+├── views/
+│   ├── __init__.py               # exports all views using imports
+│   ├── product_views.py          # ProductListView, MostLovedProductListView, RecentlyViewedListView, ProductDetailView, ProductSearchAPIView, RelatedProductsView
+│   ├── review_views.py           # ProductReviewListView, CreateReviewView, ReviewPagination
+│   ├── category_views.py         # CategoryListView
+│   ├── content_views.py          # WhatYouGetAPIView, SourceAPIView
+│   └── stock_views.py            # StockNotifyRequestCreateView
+│
+├── selectors/
+│   ├── __init__.py
+│   ├── product_selectors.py      # queryset builders for products/search/related/recent
+│   ├── category_selectors.py     # category list queryset
+│   ├── review_selectors.py       # approved reviews queryset
+│   └── content_selectors.py      # what_you_get + source querysets
+│
+├── services/
+│   ├── __init__.py
+│   └── stock_service.py          # create_stock_notify_request()
+│
+└── admin/
+    ├── __init__.py
+    ├── category_admin.py         # CategoryAdmin, SubCategoryAdmin
+    ├── product_admin.py          # ProductAdmin, CutAdmin, ImageGalleryAdmin + inlines
+    ├── review_admin.py           # ReviewAdmin
+    ├── content_admin.py          # WhatYouGetAdmin, SourceAdmin
+    ├── stock_admin.py            # StockNotifyRequestAdmin, RecentlyViewedAdmin
+    └── price_matrix_admin.py     # PriceMatrixAdmin

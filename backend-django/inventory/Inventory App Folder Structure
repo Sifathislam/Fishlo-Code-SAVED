@@ -1,0 +1,25 @@
+inventory/
+├── __init__.py
+├── apps.py
+├── admin.py                     # import hub
+├── tests.py
+│
+├── migrations/
+│   └── __init__.py
+│
+├── admins/
+│   ├── __init__.py
+│   └── inventory_admin.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── storage_models.py
+│   ├── inventory_models.py
+│   └── history_models.py
+│
+├── views/
+│  
+├── selectors/
+│   
+├── services/
+

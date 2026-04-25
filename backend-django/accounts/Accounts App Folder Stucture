@@ -1,0 +1,57 @@
+accounts/
+│
+├── __init__.py
+├── apps.py
+├── admin.py
+├── backends.py
+├── mixins.py
+├── rate_limiter.py
+├── signals.py
+├── tests.py
+├── utils.py
+│
+├── migrations/
+│   └── __init__.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── user_models.py
+│   ├── profile_models.py
+│   ├── otp_models.py
+│   ├── address_models.py
+│   └── company_models.py
+│
+├── serializers/
+│   ├── __init__.py
+│   ├── auth_serializers.py        # OTP serializers
+│   ├── user_serializers.py       # UserSerializer
+│   ├── profile_serializers.py    # UserProfileSerializer
+│   ├── address_serializers.py    # UserAddressSerializer
+│
+├── views/
+│   ├── __init__.py
+│   ├── auth_views.py             # OTP login/logout
+│   ├── profile_views.py          # profile CRUD
+│   ├── address_views.py          # address CRUD
+│   ├── dashboard_views.py        # dashboard stats
+│   ├── orders_views.py           # my orders
+│   ├── transactions_views.py     # payments history
+│   └── settings_views.py         # account settings
+│
+├── selectors/                   # READ ONLY (queries)
+│   ├── __init__.py
+│   ├── address_selectors.py
+│   ├── order_selectors.py
+│   ├── payment_selectors.py
+│
+├── services/                    # WRITE / business logic
+│   ├── __init__.py
+│   ├── two_factor_service.py     # TwoFactorService (IMPORTANT)
+│   ├── auth_service.py
+│   ├── address_service.py
+│
+├── utils/
+    ├── __init__.py
+    └── address_utils.py
+
+

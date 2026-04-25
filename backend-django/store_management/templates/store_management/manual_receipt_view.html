@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Receipt - {{ order.order_number }}</title>
+    <style>
+        :root {
+            --fishlo-primary: #f15a4a;
+            --fishlo-dark: #313844;
+            --fishlo-text: #222222;
+            --fishlo-muted: #6b7280;
+            --fishlo-bg: #efefef;
+            --card-bg: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--fishlo-bg);
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--fishlo-text);
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .receipt-wrapper {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: 5px;
+        }
+
+        .brand-box {
+            text-align: center;
+            padding: 18px 16px 0px;
+        }
+
+        .brand-box img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .store-meta {
+            border-top: 1px solid var(--border);
+            padding: 14px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--fishlo-dark);
+        }
+
+        .store-meta strong {
+            color: var(--fishlo-text);
+        }
+
+        .customer-box,
+        .summary-box,
+        .download-box,
+        .footer-box,
+        .info-card {
+            padding: 16px;
+        }
+
+        .small-label {
+            font-size: 15px;
+            color: var(--fishlo-muted);
+            margin-bottom: 6px;
+        }
+
+        .customer-name {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+
+        .summary-row,
+        .line-row,
+        .total-row,
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .summary-row {
+            align-items: center;
+        }
+
+        .amount-paid {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .qty-paid {
+            text-align: right;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .invoice-id {
+            padding: 0 16px 12px;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--fishlo-dark);
+        }
+
+        .items-card {
+            overflow: hidden;
+        }
+
+        .line-item {
+            padding: 14px 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .line-item:first-child {
+            border-top: none;
+        }
+
+        .item-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .item-name {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--fishlo-text);
+            line-height: 1.4;
+        }
+
+        .item-price {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--fishlo-text);
+            white-space: nowrap;
+        }
+
+        .item-meta {
+            font-size: 14px;
+            color: var(--fishlo-text);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .item-sub-line {
+            font-size: 14px;
+            color: var(--fishlo-text);
+            margin-top: 4px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+        }
+
+        .totals-box {
+            padding: 14px 16px;
+        }
+
+        .line-row {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .line-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .line-row .value {
+            font-weight: 400;
+        }
+
+        .total-row {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--fishlo-text);
+            padding-top: 8px;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--fishlo-primary);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 14px 16px;
+            border-radius: 0;
+        }
+
+        .download-btn:hover {
+            opacity: 0.95;
+        }
+
+        .promo-text {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--fishlo-muted);
+            line-height: 1.6;
+        }
+
+        .footer-box {
+            text-align: center;
+            color: var(--fishlo-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .thank-you {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--fishlo-dark);
+            margin-bottom: 8px;
+        }
+
+        .brand-accent {
+            color: var(--fishlo-primary);
+            font-weight: 400;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 16px;
+        }
+
+        .info-item {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .info-item .label {
+            color: var(--fishlo-muted);
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .info-item .value {
+            color: var(--fishlo-text);
+            font-weight: 400;
+            word-break: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 12px;
+            }
+
+            .page {
+                padding: 0px 0px 0px;
+            }
+
+            .brand-box img {
+                max-width: 130px;
+            }
+
+            .item-name,
+            .item-price,
+            .amount-paid,
+            .qty-paid {
+                font-size: 15px;
+            }
+
+            .download-btn {
+                font-size: 17px;
+                padding: 13px 14px;
+            }
+
+            .total-row {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="receipt-wrapper">
+
+            <div class="card">
+                <div class="brand-box">
+                    <a href="https://fishlo.in/" target="_blank">
+                        <img src="{% static 'logo/fishlo-logo-coral.png' %}" alt="Fishlo Logo">
+                    </a>
+                </div>
+
+                <div class="store-meta">
+                    <div><h2 style="margin:0; padding:0 0 5px 0;">{{ store_name|default:"Fishlo Technologies" }}</h2></div>
+                    {% if store_address %}<div>{{ store_address }}</div>{% endif %}
+                    {% if store_phone %}<div>Phone: {{ store_phone }}</div>{% endif %}
+                    {% if store_email %}<div>Email: {{ store_email }}</div>{% endif %}
+                </div>
+            </div>
+
+            <div class="card customer-box">
+                <div class="small-label">Thank you for shopping with <span class="brand-accent">Fishlo</span></div>
+                <div class="customer-name">
+                    {{ order.customer_name|default:"Walk In Customer" }}
+                </div>
+                {% if order.customer_phone %}
+                    <div class="small-label">{{ order.customer_phone }}</div>
+                {% endif %}
+            </div>
+
+            <div class="card info-card">
+                <div class="info-grid">
+                    {% if token_number %}
+                        <div class="info-item">
+                            <div class="label">Token</div>
+                            <div class="value">{{ token_number }}</div>
+                        </div>
+                    {% endif %}
+
+                    <div class="info-item">
+                        <div class="label">Bill</div>
+                        <div class="value">{{ bill_number }}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="label">Date</div>
+                        <div class="value">{{ receipt_date }}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="label">Time</div>
+                        <div class="value">{{ receipt_time }}</div>
+                    </div>
+
+                    {% if order.customer_phone %}
+                        <div class="info-item" style="grid-column: span 2;">
+                            <div class="label">Phone</div>
+                            <div class="value">{{ order.customer_phone }}</div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="card items-card">
+                <div class="invoice-id" style="margin-top:16px;">
+                    Receipt #{{ bill_number }}
+                </div>
+
+                {% for item in items %}
+                    <div class="line-item">
+                        <div class="item-top">
+                            <div class="item-name">
+                                {{ forloop.counter }}. {{ item.name }}
+                            </div>
+                            <div class="item-price">₹{{ item.line_total }}</div>
+                        </div>
+
+                        <div style="display:flex;justify-content:space-between;">
+                            {% if item.cut_type %}
+                                <div class="item-sub-line">Cuts: {{ item.cut_type }}</div>
+                            {% endif %}
+
+                            {% if item.cut_price %}
+                                <div class="item-sub-line">₹{{ item.cut_price }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="item-meta">
+                            {% if item.quantity %}Quantity : {{ item.quantity }}{% endif %}
+                            {% if item.weight_label %} &nbsp;&nbsp; Weight : {{ item.weight_label }}{% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="section-divider"></div>
+
+                <div class="totals-box">
+                    <div class="line-row">
+                        <span>Sub total</span>
+                        <span class="value">₹{{ subtotal }}</span>
+                    </div>
+
+                    {% if rounding_off %}
+                        <div class="line-row">
+                            <span>Rounding off</span>
+                            <span class="value">₹{{ rounding_off }}</span>
+                        </div>
+                    {% endif %}
+
+                    {% if discount_amount %}
+                        <div class="line-row">
+                            <span>Discount</span>
+                            <span class="value">- ₹{{ discount_amount }}</span>
+                        </div>
+                    {% endif %}
+
+                    {% if delivery_charge %}
+                        <div class="line-row">
+                            <span>Delivery charge</span>
+                            <span class="value">₹{{ delivery_charge }}</span>
+                        </div>
+                    {% endif %}
+
+                    <div class="total-row">
+                        <span>Total Amount Paid</span>
+                        <span>₹{{ net_payable }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card download-box">
+                <a href="{{ pdf_url }}" class="download-btn" download>
+                    Download Receipt
+                </a>
+
+                <div class="promo-text">
+                    Order online at
+                    <a href="https://fishlo.in/" target="_blank" style="text-decoration:underline; color:black;">
+                        <strong>www.fishlo.in</strong>
+                    </a>
+                    <br>
+                    and get 20% discount + free delivery.
+                </div>
+            </div>
+
+            <div class="card footer-box">
+                <div class="thank-you">Thanks for choosing Fishlo.</div>
+                {% if corporate_address %}
+                    <div>{{ corporate_address }}</div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

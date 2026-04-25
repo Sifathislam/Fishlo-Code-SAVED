@@ -1,0 +1,844 @@
+
+
+
+
+/* --- Hide Number Input Spin Buttons Globally --- */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  appearance: none;
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield; /* Standard */
+}
+
+/* =========================================
+   FISHLO MOBILE BOTTOM NAVIGATION
+   ========================================= */
+
+/* 1. Main Container */
+.sp-footer-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10 !important;
+
+  /* --- HEIGHT INCREASED --- */
+  padding: 4px 0;
+
+  /* Soft Upward Shadow */
+  border-top: none !important;
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 2. List Layout */
+.sp-footer-mobile ul {
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp-footer-mobile li {
+  flex: 1;
+  text-align: center;
+}
+
+/* 3. Link Item Styling */
+.sp-footer-mobile .nav-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none;
+  color: #888888;
+  background: none !important;
+  transition: all 0.2s ease;
+}
+
+/* 4. Icon Styling */
+.sp-footer-mobile .svg-icon {
+  /* --- ICON SIZE INCREASED --- */
+  width: 20px;
+  height: 20px;
+
+  margin-bottom: 5px; /* More space between icon and text */
+  stroke: currentColor;
+}
+
+/* 5. Text Label Styling */
+.sp-footer-mobile .nav-text {
+
+  font-size: 12px !important;
+
+  font-weight: 400;
+  color: inherit;
+  position: static !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+/* =========================================
+   ACTIVE STATE (FISHLO RED)
+   ========================================= */
+
+.sp-footer-mobile .nav-item.active {
+  color: #e4645a !important; /* Fishlo Red */
+}
+
+.sp-footer-mobile .nav-item.active .nav-text {
+  font-weight: 600;
+}
+
+.sp-footer-mobile .nav-item.active .svg-icon {
+  stroke: #e4645a !important;
+  stroke-width: 2.5px;
+}
+
+/* --- Backdrop --- */
+.promo-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+.promo-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Bottom Sheet --- */
+.promo-sheet {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  z-index: 1050;
+  transition: bottom 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  padding-bottom: 20px;
+
+  /* IMPORTANT: Allow button to float outside the box */
+  overflow: visible !important;
+}
+
+.promo-sheet.active {
+  bottom: 0;
+}
+
+/* --- Image Area --- */
+.promo-image-container {
+  width: 100%;
+  height: 220px;
+  background-color: #fceceb;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Round the image corners, since the sheet overflow is visible now */
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  overflow: hidden;
+}
+
+.promo-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.btn-close-x {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 40px;
+  height: 40px;
+  background-color: white; /* White background looks clean floating */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100; /* Must be very high */
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow to pop against background */
+  transition: transform 0.2s;
+}
+
+.btn-close-x:active {
+  transform: translateX(-50%) scale(0.9);
+}
+
+/* --- Text & Content --- */
+.text-carousel-window {
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  margin: 15px 0 10px 0;
+}
+.text-carousel-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-item-text {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.btn-fishlo-primary {
+  background-color: #e4645a;
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  box-shadow: 0 4px 12px rgba(215, 87, 76, 0.3);
+}
+.btn-fishlo-ghost {
+  background: transparent;
+  color: #393f4a;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.app-banner-top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 16px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  z-index: 999; /* Ensure it stays below modals but above page content */
+}
+
+/* --- Left Side --- */
+.app-banner-top-left-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Logo Styling */
+.app-banner-top-logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.app-banner-top-img {
+  height: 24px; /* Adjust based on your logo aspect ratio */
+  width: auto;
+}
+
+.app-banner-top-logo-fallback {
+  /* Only visible if image fails to load or is hidden */
+  font-weight: 800;
+  color: var(--fishlo-red);
+  font-size: 1.1rem;
+  display: none; /* Hidden by default if you have an image */
+}
+
+/* Show fallback if img is hidden (handled via JS error) */
+.app-banner-top-img[style*="display: none"] + .app-banner-top-logo-fallback {
+  display: block;
+}
+
+/* Text Group */
+.app-banner-top-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-banner-top-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fishlo-gray);
+  line-height: 1.2;
+}
+
+.app-banner-top-subtitle {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #888;
+  white-space: nowrap; /* Prevents wrapping on small screens */
+}
+
+/* --- Right Side (Button) --- */
+.app-banner-top-btn {
+  background-color: var(--fishlo-red);
+  color: white;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.app-banner-top-btn:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+/* --- Mobile Optimization --- */
+@media (max-width: 360px) {
+  .app-banner-top-subtitle {
+    display: none; /* Hide subtitle on very small screens to save space */
+  }
+
+  .app-banner-top-title {
+    font-size: 0.85rem;
+  }
+
+  .app-banner-top-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+
+.masala-fishlo-section {
+  padding: 50px 0;
+}
+
+.deatails-notify-footer {
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+.deatails-notify-text {
+  font-size: 0.7rem;
+  color: #393f4a;
+  font-weight: 400;
+}
+
+.deatails-btn-notify-me {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #e4645a;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deatails-btn-notify-me i {
+  font-size: 1rem;
+}
+
+.white-3d-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background: transparent;
+}
+
+.header-content {
+  position: relative;
+  z-index: 10;
+  margin-bottom: -80px !important;
+}
+
+.masala-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--fishlo-gray);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.masala-subtitle {
+  font-size: 1rem;
+  color: var(--fishlo-red);
+}
+
+.stage-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+.card-3d {
+  width: 750px;
+  aspect-ratio: 2/3;
+  position: absolute;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masala-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.25));
+  transition: transform 0.4s ease;
+}
+
+.pos-left {
+  transform: translateX(-340px) translateZ(-150px) rotateY(20deg) scale(0.9);
+  z-index: 1;
+}
+
+.pos-center {
+  transform: translateZ(100px) scale(1.1);
+  z-index: 3;
+}
+
+.pos-right {
+  transform: translateX(340px) translateZ(-150px) rotateY(-20deg) scale(0.9);
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .stage-container {
+    height: 600px;
+  }
+  .card-3d {
+    width: 550px;
+  }
+
+  .pos-left {
+    transform: translateX(-250px) translateZ(-100px) rotateY(15deg) scale(0.9);
+  }
+  .pos-right {
+    transform: translateX(250px) translateZ(-100px) rotateY(-15deg) scale(0.9);
+  }
+}
+
+@media (max-width: 576px) {
+  .masala-title {
+    font-size: 1.5rem;
+  }
+  .masala-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .stage-container {
+    height: 450px;
+    perspective: 800px;
+  }
+  .card-3d {
+    width: 380px;
+  }
+
+  .pos-left {
+    transform: translateX(-155px) translateZ(-100px) rotateY(10deg) scale(0.9);
+  }
+  .pos-center {
+    transform: translateZ(50px) scale(1);
+  }
+  .pos-right {
+    transform: translateX(155px) translateZ(-100px) rotateY(-10deg) scale(0.9);
+  }
+}
+
+
+
+
+/* --- Animations --- */
+@keyframes loc-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.loc-spin-pulse {
+  animation: loc-pulse 1.5s infinite;
+}
+
+/* --- Modal Overlay & Dialog --- */
+.loc-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1060;
+  display: flex !important; /* Force flex to center align */
+  align-items: center;
+  justify-content: center;
+}
+
+.loc-modal-dialog {
+  width: 100%;
+  max-width: 800px; /* Limit width on desktop */
+  margin: 1.75rem auto;
+}
+
+.loc-modal-content {
+  height: 700px; /* Fixed height for desktop */
+  max-height: 90vh; /* Don't overflow small laptops */
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Map Container --- */
+.loc-map-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* --- Top Floating Island (Search) --- */
+.loc-top-island-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+.loc-search-card {
+  flex-grow: 1;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  pointer-events: auto; /* Re-enable clicks */
+}
+
+.loc-search-row {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 55px;
+}
+
+.loc-search-input {
+  font-size: 16px; /* Prevents zooming on iOS */
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0;
+}
+.loc-search-input:focus {
+  box-shadow: none;
+}
+
+.loc-divider {
+  border-top: 1px solid #f1f3f5;
+  margin: 0 1rem;
+}
+
+.loc-current-location-btn {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 55px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loc-current-location-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.loc-close-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.loc-close-btn:hover {
+  background-color: #f8f9fa;
+  transform: rotate(90deg);
+}
+
+/* --- Zoom Controls --- */
+.loc-zoom-controls {
+  position: absolute;
+  bottom: 120px; /* Positioned relative to bottom card height */
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loc-zoom-btn {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.loc-zoom-btn:active {
+  transform: scale(0.9);
+}
+
+/* --- Bottom Confirmation Card --- */
+.loc-bottom-card-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.loc-bottom-card {
+  background-color: white;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  border-radius: 20px;
+  pointer-events: auto;
+}
+
+.loc-address-icon-circle {
+  width: 45px;
+  height: 45px;
+  background-color: #fef2f2;
+  border: 1px solid rgba(215, 87, 76, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.loc-label-text {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  color: #8898aa;
+}
+
+.loc-address-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; 
+  display: block;
+}
+
+.loc-confirm-btn {
+  background-color: var(--fishlo-red);
+  color: white;
+  height: 48px;
+  border-radius: 50rem;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(215, 87, 76, 0.2);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  transition: all 0.2s;
+}
+
+
+
+
+
+/* --- MOBILE RESPONSIVENESS (< 576px) --- */
+@media (max-width: 576px) {
+  .loc-modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .loc-modal-content {
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+
+  .loc-top-island-container {
+    padding: 0.75rem;
+  }
+  
+  .loc-bottom-card-container {
+    padding: 0.75rem;
+  }
+
+  /* Adjust Close button to fit tighter space */
+  .loc-close-btn {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .loc-search-card {
+     background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Move zoom buttons up so they don't hit the bottom card */
+  .loc-zoom-controls {
+    bottom: 110px; 
+    right: 15px;
+  }
+
+  /* Compact button for mobile */
+  .loc-confirm-btn {
+    padding: 0 1rem;
+    height: 45px;
+  }
+}
+
+
+/* Spin Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  transform-origin: center;
+  vertical-align: middle;
+}
+
+/* Custom 5-column layout for product catalog */
+@media (min-width: 1200px) {
+  .col-xl-20 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .col-xxl-20 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+/* Expected Weight Badge */
+.expected-weight-badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+}
+
+.expected-weight-badge i {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 576px) {
+  .expected-weight-badge {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+  }
+  .expected-weight-badge i {
+    font-size: 0.72rem;
+  }
+}
+
+/* Improve placeholder visibility for forms inside store dashboard modals */
+.sd-modal-overlay .form-control::placeholder,
+.sd-modal-overlay .form-select::placeholder,
+.sd-modal-overlay input::placeholder,
+.sd-modal-overlay textarea::placeholder {
+  color: #6b7280 !important; /* Darker Slate Gray for better contrast */
+  opacity: 1; /* Override browser default opacity */
+}
+

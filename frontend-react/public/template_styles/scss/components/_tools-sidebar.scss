@@ -1,0 +1,241 @@
+/* ======================================
+Tools sidebar
+========================================= */
+
+.sp-tools-sidebar-overlay {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .3);
+    background-image: url("../img/shape/shape-3.png");
+    background-repeat: repeat;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    z-index: 16;
+    &:hover {
+        cursor: url('../img/icons/18.svg'), auto;
+    }
+}
+.sp-tools-sidebar {
+	width: 300px;
+	height: calc(100% - 30px);
+    position: fixed;
+    right: 0;
+    top: 15px;
+    background-color: #ffffff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 16;
+	transform: translateX(300px);
+	border-radius: $radius-15 0 0 $radius-15;
+	box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
+	.sp-tools-sidebar-toggle {
+		position: absolute;
+		top: 45%;
+		right: 302px;
+		width: 40px;
+		height: 40px;
+		background-color: rgba(29, 37, 49, .6);
+		transition: all ease-in 0.3s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 25px;
+		z-index: -1;
+		text-decoration: none;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		i {
+			color: #fff;
+			font-size: 25px;
+			animation: rotation 3s infinite linear;
+			font-family: $remixico !important;
+		}
+		@keyframes rotation {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(359deg);
+			}
+		}
+	}
+	.sp-bar-title {
+		margin-bottom: 15px;
+		padding: 15px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $border-color;
+		h6 {
+			margin: 0;
+			font-size: 17px;
+			font-weight: 700;
+			color: $title-color;
+		}
+		.close-tools {
+			color: #ff4f7f;
+			font-size: 17px;
+		}
+	}
+	.sp-tools-detail {		
+		@include scrollbar;
+		height: calc(100vh - 102px);
+		padding: 0 15px 15px 15px;
+		overflow: auto;
+		.sp-tools-block {
+			h3 {
+				margin: 15px 0;
+				font-size: 14px;
+				font-weight: 500;
+				color: $title-color;
+				font-family: $font-family-text;
+			}
+			p {
+				margin: 0;
+				text-transform: capitalize;
+			}
+			.sp-color {
+                margin: 0;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    vertical-align: middle;
+                    margin: 6px;
+                    position: relative;
+                }
+            }
+			.sp-tools-rtl, .sp-tools-dark {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				.sp-tools-item {
+					width: 125px;
+					margin-bottom: 10px;
+					text-align: center;
+					img {
+						width: 100%;
+						padding: 5px;
+						border-radius: 10px;
+						border: 1px solid $border-color;
+						&:hover {
+							border: 1px solid $primary;
+						}
+					}
+				}
+				.active-mode {
+					img {
+						border-color: $primary;
+					}
+				}
+				.sp-tools-item.active {
+					position: relative;
+					&:after {
+						content: "\f211";
+						width: 30px;
+						height: 30px;
+						font-size: 16px;
+						font-family: uicons-regular-rounded !important;
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						border-radius: 10px;
+						background-color: rgba(95, 106, 245, .7);
+						color: #fff;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+					img {
+						border-color: $primary;
+					}
+				}
+			}
+			.sp-tools-box {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				.sp-tools-item {
+					width: 125px;
+					margin-bottom: 10px;
+					text-align: center;
+					img {
+						width: 100%;
+						padding: 5px;
+						border-radius: 10px;
+						border: 1px solid $border-color;
+						&:hover {
+							border: 1px solid $primary;
+						}
+					}
+				}
+				.sp-tools-item.active {
+					position: relative;
+					img {
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+.active-variant{
+	position: relative;
+	&:after {
+		font-family: $remixico !important;
+		content: "\eb7b";
+		height: 35px;
+		width: 35px;
+		font-size: 18px;
+		position: absolute;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.color-primary{
+	background: $primary;
+}
+.color-1{
+	background: $color-1;	
+}
+.color-2{
+	background: $color-2;	
+}
+.color-3{
+	background: $color-3;	
+}
+.color-4{
+	background: $color-4;	
+}
+.color-5{
+	background: $color-5;	
+}
+.color-6{
+	background: $color-6;	
+}
+.color-7{
+	background: $color-7;	
+}
+.color-8{
+	background: $color-8;	
+}
+.color-9{
+	background: $color-9;
+}
+.open-tools {
+	transform: translateX(0);
+}

@@ -1,0 +1,37 @@
+payments/
+│
+├── __init__.py
+├── apps.py
+├── tests.py
+│
+├── migrations/
+│   └── __init__.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── payment_models.py
+│   └── refund_models.py
+│
+├── admin/
+│   ├── __init__.py
+│   ├── payment_admin.py
+│   └── refund_admin.py
+│
+├── serializers/
+│   ├── __init__.py
+│   └── payment_serializers.py
+│
+├── views/
+│   ├── __init__.py
+│   └── order_payment_views.py
+│
+├── selectors/
+│   ├── __init__.py
+│   └── payment_selectors.py
+│
+└── services/
+    ├── __init__.py
+    ├── payment_service.py
+    ├── payment_reconciliation.py
+    ├── razorpay_gateway.py
+    └── order_payment_service.py
